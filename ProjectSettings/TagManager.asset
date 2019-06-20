@@ -8,6 +8,7 @@ TagManager:
   - UnitIA
   - EnemyIA
   - Torre
+  - CIO
   layers:
   - Default
   - TransparentFX

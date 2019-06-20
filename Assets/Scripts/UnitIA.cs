@@ -20,6 +20,13 @@ public class UnitIA : MonoBehaviour
         set => _unitState = value;
     }
 
+    // Objetivo que va a perseguir
+    public GameObject target;
+
+    // Enemigo
+    [SerializeField] private bool isEnemy;
+
+    [Header("Atributos de la unidad")]
     // Vida
     public int lifePoints;
 
@@ -29,10 +36,10 @@ public class UnitIA : MonoBehaviour
     // Cantidad de vida que resta
     public int attackPower;
 
-    // Enemigo
-    [SerializeField] private bool isEnemy;
+    // Velocidad de Ataque
+    public float attackRate = 1f;
+    private float _attackCountdown = 0;
 
-    [Header("Objetivo")] public GameObject target;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,11 +54,13 @@ public class UnitIA : MonoBehaviour
         switch (UnitState)
         {
             case UnitStates.Walking:
+                print(transform.position);
                 var step = speed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position,
                     new Vector3(target.transform.position.x, transform.position.y, 0f), step);
                 break;
             case UnitStates.Attacking:
+
                 //TODO
                 // play attack animation
                 // play attack sound
@@ -68,14 +77,32 @@ public class UnitIA : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D col2D)
     {
         if (isEnemy)
         {
+           
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
             {
                 _unitState = UnitStates.Attacking;
+                //TODO: Arreglar bug de Ataque
+                print("[" + gameObject.name + "] attack to [" + col2D.name + "] --> " + "life:" + lifePoints);
+                var otherStats = col2D.gameObject.GetComponent<UnitIA>();
+                while (otherStats.lifePoints > 0)
+                {
+                    if (_attackCountdown <= 0)
+                    {
+                        otherStats.lifePoints -= attackPower;
+                        if (otherStats.lifePoints <= 0)
+                        {
+                            _unitState = UnitStates.Walking;
+                            Destroy(col2D.gameObject);
+                        }
+                        _attackCountdown = 1f / attackRate;
+                    }
+                    _attackCountdown -= Time.deltaTime;
+                }
+                print(col2D.name + "->" + otherStats.lifePoints);
             }
         }
         else

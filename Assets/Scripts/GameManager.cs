@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [Header("Tiempo para jugar:")] public float tiempoInicial;
 
     private float _tiempo;
+    
+    
 
     public float Tiempo
     {
@@ -74,9 +76,5 @@ public class GameManager : MonoBehaviour
             Tiempo = 0f;
             SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
         }
-
-        // //Check Scenes
-        // if (GameScene.name.Equals("Titulo"))
-        //     Tiempo = 0f;
     }
 }
