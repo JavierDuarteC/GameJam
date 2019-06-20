@@ -5,21 +5,6 @@ using UnityEngine;
 
 public class UnitIA : MonoBehaviour
 {
-    public enum UnitStates
-    {
-        Walking,
-        Attacking,
-        Dead
-    }
-
-    private UnitStates _unitState;
-
-    public UnitStates UnitState
-    {
-        get => _unitState;
-        set => _unitState = value;
-    }
-
     // Objetivo que va a perseguir
     public GameObject target;
 
@@ -50,67 +35,45 @@ public class UnitIA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(UnitState);
-        switch (UnitState)
-        {
-            case UnitStates.Walking:
-                print(transform.position);
-                var step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position,
-                    new Vector3(target.transform.position.x, transform.position.y, 0f), step);
-                break;
-            case UnitStates.Attacking:
-
-                //TODO
-                // play attack animation
-                // play attack sound
-                break;
-            case UnitStates.Dead:
-                //TODO
-                //play dead animation
-                //play dead sound
-                Destroy(gameObject);
-                break;
-            default:
-                _unitState = UnitStates.Walking;
-                break;
-        }
+        var step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position,
+            new Vector3(target.transform.position.x, transform.position.y, 0f), step);
     }
+
 
     private void OnTriggerEnter2D(Collider2D col2D)
     {
         if (isEnemy)
         {
-           
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
-            {
-                _unitState = UnitStates.Attacking;
-                //TODO: Arreglar bug de Ataque
-                print("[" + gameObject.name + "] attack to [" + col2D.name + "] --> " + "life:" + lifePoints);
-                var otherStats = col2D.gameObject.GetComponent<UnitIA>();
-                while (otherStats.lifePoints > 0)
-                {
-                    if (_attackCountdown <= 0)
-                    {
-                        otherStats.lifePoints -= attackPower;
-                        if (otherStats.lifePoints <= 0)
-                        {
-                            _unitState = UnitStates.Walking;
-                            Destroy(col2D.gameObject);
-                        }
-                        _attackCountdown = 1f / attackRate;
-                    }
-                    _attackCountdown -= Time.deltaTime;
-                }
-                print(col2D.name + "->" + otherStats.lifePoints);
-            }
+                Attack(col2D);
         }
+
         else
         {
             if (col2D.CompareTag("EnemyIA") || col2D.CompareTag("TorreEnemiga"))
+                Attack(col2D);
+        }
+    }
+
+    private void Attack(Collider2D other)
+    {
+        print("[" + gameObject.name + "] attack to [" + other.name + "] --> " + "life:" + lifePoints);
+        var otherStats = other.gameObject.GetComponent<UnitIA>();
+        while (otherStats.lifePoints > 0)
+        {
+            if (_attackCountdown <= 0)
             {
-                _unitState = UnitStates.Attacking;
+                otherStats.lifePoints -= attackPower;
+                if (otherStats.lifePoints <= 0)
+                {
+                    Destroy(other.gameObject);
+                }
+
+                _attackCountdown = 1f / attackRate;
             }
+
+            _attackCountdown -= Time.deltaTime;
         }
     }
 }

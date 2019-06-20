@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 550655366060051864}
-  - component: {fileID: 550655366060051865}
   - component: {fileID: 550655366060051862}
+  - component: {fileID: 550655366060051865}
   - component: {fileID: 550655366060051863}
   - component: {fileID: 550655366060051867}
   - component: {fileID: 550655366060051860}
@@ -35,6 +35,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550655366060051862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550655366060051858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7318f480e1c254fa420345028173ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  isEnemy: 0
+  lifePoints: 300
+  speed: 1
+  attackPower: 100
+  attackRate: 1
 --- !u!212 &550655366060051865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,23 +102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &550655366060051862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550655366060051858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7318f480e1c254fa420345028173ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifePoints: 300
-  speed: 0.1
-  attackPower: 100
-  isEnemy: 0
-  target: {fileID: 0}
 --- !u!61 &550655366060051863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09502435, y: 1.3432429}
+  m_Offset: {x: 0.09217089, y: 1.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44275102, y: 0.4657197}
@@ -151,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 4.9211345}
+  m_Size: {x: 1.61, y: 6}
   m_EdgeRadius: 0
 --- !u!50 &550655366060051860
 Rigidbody2D:
