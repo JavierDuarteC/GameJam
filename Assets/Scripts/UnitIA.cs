@@ -58,10 +58,11 @@ public class UnitIA : MonoBehaviour
 
     private void Attack(Collider2D other)
     {
-        print("[" + gameObject.name + "] attack to [" + other.name + "] --> " + "life:" + lifePoints);
+        // TODO: Corregir el bug del Emprendedor que mata todo
         var otherStats = other.gameObject.GetComponent<UnitIA>();
-        while (otherStats.lifePoints > 0)
+        while (otherStats.lifePoints > 0 && lifePoints > 0)
         {
+            print("[" + gameObject.name + "] attack to [" + other.name + "]");
             if (_attackCountdown <= 0)
             {
                 otherStats.lifePoints -= attackPower;
@@ -72,6 +73,8 @@ public class UnitIA : MonoBehaviour
 
                 _attackCountdown = 1f / attackRate;
             }
+
+            print("Vida resultante del objetivo:" + otherStats.lifePoints);
 
             _attackCountdown -= Time.deltaTime;
         }
