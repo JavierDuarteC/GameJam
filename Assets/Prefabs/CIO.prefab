@@ -52,7 +52,7 @@ MonoBehaviour:
   lifePoints: 300
   speed: 1
   attackPower: 100
-  attackRate: 1
+  attackSpeed: 1
 --- !u!212 &550655366060051865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09217089, y: 1.9}
+  m_Offset: {x: 0.092170894, y: 0.08192992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44275102, y: 0.4657197}
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 6}
+  m_Size: {x: 1.61, y: 2.39}
   m_EdgeRadius: 0
 --- !u!50 &550655366060051860
 Rigidbody2D:
@@ -174,4 +174,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
