@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class UnitIA : MonoBehaviour
 {
@@ -18,11 +20,14 @@ public class UnitIA : MonoBehaviour
 
     // Cantidad de vida que resta
     public int attackPower;
-    private GameObject objAttack;
+
 
     // Velocidad de Ataque
     [SerializeField] private float attackSpeed;
     private float randomSpeed;
+    private float attackTimer;
+
+    [Header("Objetivo, por defecto null")] public GameObject objAttack;
 
     // Start is called before the first frame update
     void Awake()
@@ -44,18 +49,21 @@ public class UnitIA : MonoBehaviour
         if (isEnemy)
         {
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
+            {
                 AttackOver(col2D);
+            }
         }
         else
         {
             if (col2D.CompareTag("EnemyIA") || col2D.CompareTag("TorreEnemiga"))
+            {
                 AttackOver(col2D);
+            }
         }
     }
 
     private void Attack(UnitIA other)
     {
-        
         other.lifePoints -= attackPower;
         print("[" + gameObject.name + "] attack to [" + other.gameObject.name + "] with [" + randomSpeed +
               "] Aspd");
@@ -73,16 +81,24 @@ public class UnitIA : MonoBehaviour
     {
         objAttack = col2D.gameObject;
         var otherStats = objAttack.GetComponent<UnitIA>();
-
         if (lifePoints > 0 && otherStats.lifePoints > 0)
         {
-            //TODO esperar el atk speed con un contador de ticks while
-            Attack(otherStats);
+            print(attackTimer + " de ["+ gameObject.name +']');
+            if (attackTimer <= 0)
+            {
+                Attack(otherStats);
+                attackTimer = randomSpeed;
+            }
+            else
+            {
+                var deltaT = Time.deltaTime;
+                attackTimer -= deltaT*100;
+                
+            }
         }
         else
         {
             objAttack = null;
         }
     }
-    
 }
