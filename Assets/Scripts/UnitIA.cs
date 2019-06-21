@@ -21,27 +21,37 @@ public class UnitIA : MonoBehaviour
     // Cantidad de vida que resta
     public int attackPower;
 
+    private bool isAttacking = false;
+
 
     // Velocidad de Ataque
     [SerializeField] private float attackSpeed;
     private float randomSpeed;
     private float attackTimer;
 
-    [Header("Objetivo, por defecto null")] public GameObject objAttack;
+    [HideInInspector] public GameObject objAttack;
 
     // Start is called before the first frame update
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag(isEnemy ? "Torre" : "TorreEnemiga");
-        randomSpeed = Random.Range(attackSpeed, attackSpeed + 0.1f);
+        randomSpeed = Random.Range(attackSpeed, attackSpeed + 0.05f);
+    }
+
+    private void Start()
+    {
+        attackTimer = randomSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return;
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position,
             new Vector3(target.transform.position.x, transform.position.y, 0f), step);
+        if (!isAttacking) return;
+        AttackOver(objAttack);
     }
 
     private void OnTriggerEnter2D(Collider2D col2D)
@@ -50,16 +60,24 @@ public class UnitIA : MonoBehaviour
         {
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
             {
-                AttackOver(col2D);
+                isAttacking = true;
+                objAttack = col2D.gameObject;
             }
         }
         else
         {
             if (col2D.CompareTag("EnemyIA") || col2D.CompareTag("TorreEnemiga"))
             {
-                AttackOver(col2D);
+                isAttacking = true;
+                objAttack = col2D.gameObject;
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D col2D)
+    {
+        isAttacking = false;
+        objAttack = null;
     }
 
     private void Attack(UnitIA other)
@@ -77,14 +95,13 @@ public class UnitIA : MonoBehaviour
         }
     }
 
-    private void AttackOver(Collider2D col2D)
+    private void AttackOver(GameObject objTarget)
     {
-        objAttack = col2D.gameObject;
-        var otherStats = objAttack.GetComponent<UnitIA>();
+        var otherStats = objTarget.GetComponent<UnitIA>();
         if (lifePoints > 0 && otherStats.lifePoints > 0)
         {
-            print(attackTimer + " de ["+ gameObject.name +']');
-            if (attackTimer <= 0)
+            print(attackTimer + " de [" + gameObject.name + ']');
+            if (attackTimer <= 0f)
             {
                 Attack(otherStats);
                 attackTimer = randomSpeed;
@@ -92,13 +109,8 @@ public class UnitIA : MonoBehaviour
             else
             {
                 var deltaT = Time.deltaTime;
-                attackTimer -= deltaT*100;
-                
+                attackTimer -= deltaT;
             }
-        }
-        else
-        {
-            objAttack = null;
         }
     }
 }
