@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 public class UnitIA : MonoBehaviour
 {
     // Objetivo que va a perseguir
-    public GameObject target;
+    [HideInInspector]public GameObject target;
 
     // Enemigo
     [SerializeField] private bool isEnemy;
@@ -46,7 +46,8 @@ public class UnitIA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return;
+        
+        if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return; // Define si la torre ataca o no ataca
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position,
             new Vector3(target.transform.position.x, transform.position.y, 0f), step);

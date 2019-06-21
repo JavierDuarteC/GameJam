@@ -293,8 +293,8 @@ GameObject:
   - component: {fileID: 709411850}
   - component: {fileID: 709411848}
   - component: {fileID: 709411849}
-  - component: {fileID: 709411851}
   - component: {fileID: 709411852}
+  - component: {fileID: 709411853}
   m_Layer: 0
   m_Name: EnemyTower
   m_TagString: TorreEnemiga
@@ -390,27 +390,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &709411851
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709411847}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!61 &709411852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -437,6 +416,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &709411853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709411847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7318f480e1c254fa420345028173ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  isEnemy: 1
+  lifePoints: 1000
+  speed: 0
+  attackPower: 100
+  attackSpeed: 2
+  objAttack: {fileID: 0}
 --- !u!1 &802746239
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +597,7 @@ GameObject:
   - component: {fileID: 1967086681}
   - component: {fileID: 1967086682}
   - component: {fileID: 1967086684}
+  - component: {fileID: 1967086685}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Torre
@@ -720,6 +719,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1967086685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967086680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7318f480e1c254fa420345028173ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  isEnemy: 0
+  lifePoints: 1000
+  speed: 0
+  attackPower: 100
+  attackSpeed: 2
+  objAttack: {fileID: 0}
 --- !u!1001 &550655364725310081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,7 +753,7 @@ PrefabInstance:
     - target: {fileID: 550655366060051864, guid: 032d52fc1cf6c784695316fb21627e54,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.34
+      value: -1.1799991
       objectReference: {fileID: 0}
     - target: {fileID: 550655366060051864, guid: 032d52fc1cf6c784695316fb21627e54,
         type: 3}
@@ -849,7 +867,7 @@ PrefabInstance:
     - target: {fileID: 2785093565340352703, guid: bfc0b71d57679794baeb85009a6a05dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.750001
+      value: -7.78
       objectReference: {fileID: 0}
     - target: {fileID: 2785093565340352703, guid: bfc0b71d57679794baeb85009a6a05dc,
         type: 3}
@@ -1014,7 +1032,7 @@ PrefabInstance:
     - target: {fileID: 5074874399515668039, guid: 090add063d4da6948b79e5f762a15118,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.8
+      value: 8.94
       objectReference: {fileID: 0}
     - target: {fileID: 5074874399515668039, guid: 090add063d4da6948b79e5f762a15118,
         type: 3}
@@ -1149,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: 6188307536129111001, guid: df355644ea4ea53459625882fa0ed36c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 2.8399992
       objectReference: {fileID: 0}
     - target: {fileID: 6188307536129111001, guid: df355644ea4ea53459625882fa0ed36c,
         type: 3}
@@ -1284,7 +1302,7 @@ PrefabInstance:
     - target: {fileID: 8510694960167796703, guid: 086a70abb32350e48abc723214403440,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.65
+      value: -4.4899993
       objectReference: {fileID: 0}
     - target: {fileID: 8510694960167796703, guid: 086a70abb32350e48abc723214403440,
         type: 3}
@@ -1383,7 +1401,7 @@ PrefabInstance:
     - target: {fileID: 9202288102253614383, guid: 90daaccb84e265548be09461d14c6a69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.56
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 9202288102253614383, guid: 90daaccb84e265548be09461d14c6a69,
         type: 3}
