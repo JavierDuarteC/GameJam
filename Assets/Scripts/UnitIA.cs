@@ -29,6 +29,8 @@ public class UnitIA : MonoBehaviour
     // Cantidad de vida que resta
     public int attackPower;
 
+    public float costUnit;
+
     #endregion
 
     private bool isAttacking = false;
@@ -42,6 +44,7 @@ public class UnitIA : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag(isEnemy ? "Torre" : "TorreEnemiga");
         randomSpeed = Random.Range(attackSpeed, attackSpeed + 0.05f);
+        
     }
 
     private void Start()
@@ -105,7 +108,8 @@ public class UnitIA : MonoBehaviour
             }
             else
             {
-                _unitMan.dinero += other.lifePoints * 1000;
+                _unitMan.dinero += other.costUnit;
+                print("Banco: ["+_unitMan.dinero + "] "+"Ganancia: ["+ other.costUnit + ']');
                 Destroy(other.gameObject);
             }
         }

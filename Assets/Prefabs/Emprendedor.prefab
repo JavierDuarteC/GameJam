@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.092170894, y: 0.08192992}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44275102, y: 0.4657197}
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 2.39}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &9202288102253614380
 SpriteRenderer:
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2088923781634697940, guid: 2a9724d9fa422ca48aa7abd247606df8,
     type: 3}
   m_Color: {r: 0.8867924, g: 0.32208967, b: 0.32208967, a: 1}
@@ -172,8 +172,8 @@ MonoBehaviour:
   target: {fileID: 0}
   isEnemy: 1
   lifePoints: 100
-  costoUnit: 0
   speed: 1
   attackSpeed: 1
   attackPower: 34
+  costUnit: 100
   objAttack: {fileID: 0}

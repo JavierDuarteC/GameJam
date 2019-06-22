@@ -50,10 +50,10 @@ MonoBehaviour:
   target: {fileID: 0}
   isEnemy: 1
   lifePoints: 200
-  costoUnit: 0
   speed: 1
   attackSpeed: 2
   attackPower: 50
+  costUnit: 200
   objAttack: {fileID: 0}
 --- !u!212 &5074874399515668037
 SpriteRenderer:
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.092170894, y: 0.08192992}
+  m_Offset: {x: 0.092170894, y: -0.05178845}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44275102, y: 0.4657197}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 2.39}
+  m_Size: {x: 1.61, y: 0.33965278}
   m_EdgeRadius: 0
 --- !u!61 &5074874399515668155
 BoxCollider2D:
