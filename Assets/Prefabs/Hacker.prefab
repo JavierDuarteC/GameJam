@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8510694960167796690}
   - component: {fileID: 1745943721485450679}
   m_Layer: 8
-  m_Name: Progammer
+  m_Name: Hacker
   m_TagString: UnitIA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8510694960167796700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.57, y: -3.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,9 +50,10 @@ MonoBehaviour:
   target: {fileID: 0}
   isEnemy: 0
   lifePoints: 100
+  costoUnit: 0
   speed: 1
-  attackPower: 34
   attackSpeed: 1
+  attackPower: 34
   objAttack: {fileID: 0}
 --- !u!212 &8510694960167796701
 SpriteRenderer:
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.092170894, y: 0.08192992}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44275102, y: 0.4657197}
@@ -127,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 2.39}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &8510694960167796690
 BoxCollider2D:

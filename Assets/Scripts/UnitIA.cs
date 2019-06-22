@@ -1,35 +1,41 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class UnitIA : MonoBehaviour
 {
     // Objetivo que va a perseguir
-    [HideInInspector]public GameObject target;
+    [HideInInspector] public GameObject target;
 
     // Enemigo
     [SerializeField] private bool isEnemy;
 
+    #region Atributos
+
     [Header("Atributos de la unidad")]
-    // Vida
+    // Vida, tambien es el costo de unidad
     public int lifePoints;
 
     // Velocidad de movimiento
     [SerializeField] private float speed;
-
-    // Cantidad de vida que resta
-    public int attackPower;
-
-    private bool isAttacking = false;
-
 
     // Velocidad de Ataque
     [SerializeField] private float attackSpeed;
     private float randomSpeed;
     private float attackTimer;
 
+    // Cantidad de vida que resta
+    public int attackPower;
+
+    #endregion
+
+    private bool isAttacking = false;
+
+    private UnitManager _unitMan;
     [HideInInspector] public GameObject objAttack;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -41,12 +47,12 @@ public class UnitIA : MonoBehaviour
     private void Start()
     {
         attackTimer = randomSpeed;
+        _unitMan = GameObject.Find(CompareTag("UnitIA") ? "Tower" : "EnemyTower").GetComponent<UnitManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return; // Define si la torre ataca o no ataca
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position,
@@ -92,7 +98,16 @@ public class UnitIA : MonoBehaviour
         if (other.lifePoints <= 0)
         {
             print("Muere > " + other.gameObject.name);
-            Destroy(other.gameObject);
+            if (other.CompareTag("Torre") || other.CompareTag("TorreEnemiga"))
+            {
+                Destroy(other.gameObject);
+                SceneManager.LoadScene(SceneManager.GetSceneAt(3).name); // Cargar pantalla de fin
+            }
+            else
+            {
+                _unitMan.dinero += other.lifePoints * 1000;
+                Destroy(other.gameObject);
+            }
         }
     }
 

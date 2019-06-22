@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-
+    #region Variables
+    
     public enum GameStates
     {
         Playing,
@@ -17,8 +18,15 @@ public class GameManager : MonoBehaviour
     [Header("Tiempo para jugar:")] public float tiempoInicial;
 
     private float _tiempo;
-    
-    
+
+    private int _dinero;
+
+    public int Dinero
+    {
+        get => _dinero;
+        set => _dinero = value;
+    }
+
 
     public float Tiempo
     {
@@ -49,6 +57,8 @@ public class GameManager : MonoBehaviour
         get => gameState;
         set => gameState = value;
     }
+    
+    #endregion
 
 
     private void Awake()
@@ -64,6 +74,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Tiempo = tiempoInicial;
+        Dinero = 0;
         GameScene = SceneManager.GetActiveScene();
     }
 
@@ -74,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (GameState.Equals(GameStates.Lose))
         {
             Tiempo = 0f;
-            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+           
         }
     }
 }
