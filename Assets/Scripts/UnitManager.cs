@@ -8,12 +8,14 @@ public class UnitManager : MonoBehaviour
     public int income;
 
     // Ingenieros de Sistemas
-    [Header("Ingenieros de sistemas")] public GameObject hacker;
+    [Header("Ingenieros de sistemas")] 
+    public GameObject hacker;
     public GameObject designer;
     public GameObject cio;
 
     // Clientes
-    [Header("Clientes")] public GameObject emprendedor;
+    [Header("Clientes")] 
+    public GameObject emprendedor;
     public GameObject jefe;
     public GameObject abuela;
 

@@ -51,7 +51,7 @@ MonoBehaviour:
   isEnemy: 0
   lifePoints: 100
   speed: 1
-  attackSpeed: 1
+  attackSpeed: 0.8
   attackPower: 34
   costUnit: 100
   objAttack: {fileID: 0}
@@ -154,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1.6, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &1745943721485450679
 Rigidbody2D:
@@ -176,4 +176,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7

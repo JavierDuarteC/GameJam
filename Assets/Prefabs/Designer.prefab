@@ -51,7 +51,7 @@ MonoBehaviour:
   isEnemy: 0
   lifePoints: 200
   speed: 1
-  attackSpeed: 2
+  attackSpeed: 1.2
   attackPower: 50
   costUnit: 200
   objAttack: {fileID: 0}
@@ -91,10 +91,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2088923781634697940, guid: 2a9724d9fa422ca48aa7abd247606df8,
     type: 3}
-  m_Color: {r: 0.10849059, g: 1, b: 0.15307665, a: 1}
+  m_Color: {r: 0.2811944, g: 0.3738158, b: 0.8396226, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1.6, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &2785093565340352698
 Rigidbody2D:
@@ -176,4 +176,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6

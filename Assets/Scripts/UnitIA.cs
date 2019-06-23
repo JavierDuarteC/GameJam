@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 public class UnitIA : MonoBehaviour
 {
     // Objetivo que va a perseguir
-    [HideInInspector] public GameObject target;
+    [HideInInspector] 
+    public GameObject target;
 
     // Enemigo
-    [SerializeField] private bool isEnemy;
+    [SerializeField] 
+    private bool isEnemy;
 
     #region Atributos
 
@@ -19,10 +21,12 @@ public class UnitIA : MonoBehaviour
     public int lifePoints;
 
     // Velocidad de movimiento
-    [SerializeField] private float speed;
+    [SerializeField] 
+    private float speed;
 
     // Velocidad de Ataque
-    [SerializeField] private float attackSpeed;
+    [SerializeField] 
+    private float attackSpeed;
     private float randomSpeed;
     private float attackTimer;
 
@@ -34,9 +38,11 @@ public class UnitIA : MonoBehaviour
     #endregion
 
     private bool isAttacking = false;
+    private bool isMoving = true;
 
     private UnitManager _unitMan;
-    [HideInInspector] public GameObject objAttack;
+    [HideInInspector] 
+    public GameObject objAttack;
 
 
     // Start is called before the first frame update
@@ -57,11 +63,50 @@ public class UnitIA : MonoBehaviour
     void Update()
     {
         if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return; // Define si la torre ataca o no ataca
-        var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position,
-            new Vector3(target.transform.position.x, transform.position.y, 0f), step);
+        if(isMoving){
+            var step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position,
+                new Vector3(target.transform.position.x, transform.position.y, 0f), step);
+        }else{
+            //stop
+        }
+        
         if (!isAttacking) return;
         AttackOver(objAttack);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col2D) {
+        if (isEnemy)
+            {
+                if (col2D.gameObject.CompareTag("EnemyIA"))
+                {
+                    isMoving = false;
+                }
+            }
+            else
+            {
+                if (col2D.gameObject.CompareTag("UnitIA"))
+                {
+                    isMoving = false;
+                }
+            }
+    }
+
+    private void OnCollisionExit2D(Collision2D col2D) {    
+        if (isEnemy)
+            {
+                if (col2D.gameObject.CompareTag("EnemyIA"))
+                {
+                    isMoving = true;
+                }
+            }
+            else
+            {
+                if (col2D.gameObject.CompareTag("UnitIA"))
+                {
+                    isMoving = true;
+                }
+            }
     }
 
     private void OnTriggerEnter2D(Collider2D col2D)
@@ -71,7 +116,11 @@ public class UnitIA : MonoBehaviour
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
             {
                 isAttacking = true;
+                isMoving = false;
                 objAttack = col2D.gameObject;
+            }else if (col2D.CompareTag("EnemyIA"))
+            {
+                //isMoving = false;
             }
         }
         else
@@ -79,7 +128,38 @@ public class UnitIA : MonoBehaviour
             if (col2D.CompareTag("EnemyIA") || col2D.CompareTag("TorreEnemiga"))
             {
                 isAttacking = true;
+                isMoving = false;
                 objAttack = col2D.gameObject;
+            }else if (col2D.CompareTag("UnitIA"))
+            {
+                //isMoving = false;
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col2D) {
+        if (isEnemy)
+        {
+            if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
+            {
+                isAttacking = true;
+                isMoving = false;
+                objAttack = col2D.gameObject;
+            }else if (col2D.CompareTag("EnemyIA"))
+            {
+                //isMoving = false;
+            }
+        }
+        else
+        {
+            if (col2D.CompareTag("EnemyIA") || col2D.CompareTag("TorreEnemiga"))
+            {
+                isAttacking = true;
+                isMoving = false;
+                objAttack = col2D.gameObject;
+            }else if (col2D.CompareTag("UnitIA"))
+            {
+                //isMoving = false;
             }
         }
     }
@@ -87,6 +167,7 @@ public class UnitIA : MonoBehaviour
     private void OnTriggerExit2D(Collider2D col2D)
     {
         isAttacking = false;
+        isMoving = true;
         objAttack = null;
     }
 
