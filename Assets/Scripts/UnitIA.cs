@@ -2,17 +2,16 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class UnitIA : MonoBehaviour
 {
     // Objetivo que va a perseguir
-    [HideInInspector] 
-    public GameObject target;
+    [HideInInspector] public GameObject target;
 
     // Enemigo
-    [SerializeField] 
-    private bool isEnemy;
+    [SerializeField] private bool isEnemy;
 
     #region Atributos
 
@@ -21,12 +20,10 @@ public class UnitIA : MonoBehaviour
     public int lifePoints;
 
     // Velocidad de movimiento
-    [SerializeField] 
-    private float speed;
+    [SerializeField] private float speed;
 
     // Velocidad de Ataque
-    [SerializeField] 
-    private float attackSpeed;
+    [SerializeField] private float attackSpeed;
     private float randomSpeed;
     private float attackTimer;
 
@@ -41,16 +38,19 @@ public class UnitIA : MonoBehaviour
     private bool isMoving = true;
 
     private UnitManager _unitMan;
-    [HideInInspector] 
-    public GameObject objAttack;
+    [HideInInspector] public GameObject objAttack;
 
+    private Image healthBarP1;
+    private Image healthBarP2;
+    private const float maxTowerLife = 1000;
 
     // Start is called before the first frame update
     void Awake()
     {
+        healthBarP1 = GameObject.Find("TowerBar").transform.Find("HealthBarP1").GetComponent<Image>();
+        healthBarP2 = GameObject.Find("EnemyBar").transform.Find("HealthBarP2").GetComponent<Image>();
         target = GameObject.FindGameObjectWithTag(isEnemy ? "Torre" : "TorreEnemiga");
         randomSpeed = Random.Range(attackSpeed, attackSpeed + 0.05f);
-        
     }
 
     private void Start()
@@ -63,50 +63,55 @@ public class UnitIA : MonoBehaviour
     void Update()
     {
         if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return; // Define si la torre ataca o no ataca
-        if(isMoving){
+        if (isMoving)
+        {
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position,
                 new Vector3(target.transform.position.x, transform.position.y, 0f), step);
-        }else{
+        }
+        else
+        {
             //stop
         }
-        
+
         if (!isAttacking) return;
         AttackOver(objAttack);
     }
 
-    private void OnCollisionEnter2D(Collision2D col2D) {
+    private void OnCollisionEnter2D(Collision2D col2D)
+    {
         if (isEnemy)
+        {
+            if (col2D.gameObject.CompareTag("EnemyIA"))
             {
-                if (col2D.gameObject.CompareTag("EnemyIA"))
-                {
-                    isMoving = false;
-                }
+                isMoving = false;
             }
-            else
+        }
+        else
+        {
+            if (col2D.gameObject.CompareTag("UnitIA"))
             {
-                if (col2D.gameObject.CompareTag("UnitIA"))
-                {
-                    isMoving = false;
-                }
+                isMoving = false;
             }
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D col2D) {    
+    private void OnCollisionExit2D(Collision2D col2D)
+    {
         if (isEnemy)
+        {
+            if (col2D.gameObject.CompareTag("EnemyIA"))
             {
-                if (col2D.gameObject.CompareTag("EnemyIA"))
-                {
-                    isMoving = true;
-                }
+                isMoving = true;
             }
-            else
+        }
+        else
+        {
+            if (col2D.gameObject.CompareTag("UnitIA"))
             {
-                if (col2D.gameObject.CompareTag("UnitIA"))
-                {
-                    isMoving = true;
-                }
+                isMoving = true;
             }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col2D)
@@ -118,7 +123,8 @@ public class UnitIA : MonoBehaviour
                 isAttacking = true;
                 isMoving = false;
                 objAttack = col2D.gameObject;
-            }else if (col2D.CompareTag("EnemyIA"))
+            }
+            else if (col2D.CompareTag("EnemyIA"))
             {
                 //isMoving = false;
             }
@@ -130,14 +136,16 @@ public class UnitIA : MonoBehaviour
                 isAttacking = true;
                 isMoving = false;
                 objAttack = col2D.gameObject;
-            }else if (col2D.CompareTag("UnitIA"))
+            }
+            else if (col2D.CompareTag("UnitIA"))
             {
                 //isMoving = false;
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col2D) {
+    private void OnTriggerStay2D(Collider2D col2D)
+    {
         if (isEnemy)
         {
             if (col2D.CompareTag("UnitIA") || col2D.CompareTag("Torre"))
@@ -145,7 +153,8 @@ public class UnitIA : MonoBehaviour
                 isAttacking = true;
                 isMoving = false;
                 objAttack = col2D.gameObject;
-            }else if (col2D.CompareTag("EnemyIA"))
+            }
+            else if (col2D.CompareTag("EnemyIA"))
             {
                 //isMoving = false;
             }
@@ -157,7 +166,8 @@ public class UnitIA : MonoBehaviour
                 isAttacking = true;
                 isMoving = false;
                 objAttack = col2D.gameObject;
-            }else if (col2D.CompareTag("UnitIA"))
+            }
+            else if (col2D.CompareTag("UnitIA"))
             {
                 //isMoving = false;
             }
@@ -174,14 +184,18 @@ public class UnitIA : MonoBehaviour
     private void Attack(UnitIA other)
     {
         other.lifePoints -= attackPower;
-        print("[" + gameObject.name + "] attack to [" + other.gameObject.name + "] with [" + randomSpeed +
-              "] Aspd");
-        print("Vida de " + gameObject.name + " --> " + lifePoints);
-        print("Vida de: " + other.gameObject.name + "-->" + other.lifePoints);
+        if (other.CompareTag("Torre"))
+        {
+            healthBarP1.fillAmount = other.lifePoints / maxTowerLife;
+        }
+
+        if (other.CompareTag("TorreEnemiga"))
+        {
+            healthBarP2.fillAmount = other.lifePoints / maxTowerLife;
+        }
 
         if (other.lifePoints <= 0)
         {
-            print("Muere > " + other.gameObject.name);
             if (other.CompareTag("Torre") || other.CompareTag("TorreEnemiga"))
             {
                 Destroy(other.gameObject);
@@ -190,7 +204,7 @@ public class UnitIA : MonoBehaviour
             else
             {
                 _unitMan.dinero += other.costUnit;
-                print("Banco: ["+_unitMan.dinero + "] "+"Ganancia: ["+ other.costUnit + ']');
+                print("Banco: [" + _unitMan.dinero + "] " + "Ganancia: [" + other.costUnit + ']');
                 Destroy(other.gameObject);
             }
         }
