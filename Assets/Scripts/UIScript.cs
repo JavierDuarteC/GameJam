@@ -24,14 +24,14 @@ public class UIScript : MonoBehaviour
         {
             var dineroClamp = Mathf.Clamp(_unitMan.dinero, 0, Mathf.Infinity);
 //            dineroP1.text = string.Format("{0.000", dineroClamp);
-            dineroP1.text = "Crypto: "+ Mathf.Round(dineroClamp).ToString();
+            dineroP1.text = Mathf.Round(dineroClamp).ToString()+" $";
         }
 
         if (_unitMan.CompareTag("TorreEnemiga"))
         {
             var dineroClamp = Mathf.Clamp(_unitMan.dinero, 0, Mathf.Infinity);
             
-            dineroP2.text = "Pesos: "+Mathf.Round(dineroClamp).ToString();
+            dineroP2.text = Mathf.Round(dineroClamp).ToString()+" $";
         }
     }
 }
