@@ -1,64 +1,25 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public int width;
+    public int height;
 
-    #region Variables
-    
-    public enum GameStates
+    public void SetWidth(int newWidth)
     {
-        Playing,
-        Win,
-        Lose
+        width = newWidth;
     }
 
-    //Variables del juego
-    [Header("Tiempo para jugar:")] public float tiempoInicial;
-
-    private float _tiempo;
-
-    private int _dinero;
-
-    public int Dinero
+    public void SetHeight(int newHeight)
     {
-        get => _dinero;
-        set => _dinero = value;
+        height = newHeight;
     }
 
-
-    public float Tiempo
+    public void SetRes()
     {
-        get => _tiempo;
-        set => _tiempo = value;
+        Screen.SetResolution(width, height, false);
     }
-
-    private int _nivel;
-
-    public int Nivel
-    {
-        get => _nivel;
-        set => _nivel = value;
-    }
-
-    private Scene _gameScene;
-
-    public Scene GameScene
-    {
-        get => _gameScene;
-        set => _gameScene = value;
-    }
-
-    private GameStates gameState;
-
-    public GameStates GameState
-    {
-        get => gameState;
-        set => gameState = value;
-    }
-    
-    #endregion
 
 
     private void Awake()
@@ -73,19 +34,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Tiempo = tiempoInicial;
-        Dinero = 0;
-        GameScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //check game states
-        if (GameState.Equals(GameStates.Lose))
-        {
-            Tiempo = 0f;
-           
-        }
     }
 }

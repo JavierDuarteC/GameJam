@@ -1,23 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitManager : MonoBehaviour
 {
+    // Variables globales del juego
     public float dinero;
     public int income;
+
+
+    #region Prefabs parameters
 
     // Ingenieros de Sistemas
     [Header("Ingenieros de sistemas")] 
     public GameObject hacker;
     public GameObject designer;
     public GameObject cio;
+    public float maxSisGlobalCD;
+    private float sisGlobalCD;
+    private Image cdBarSis;
 
     // Clientes
     [Header("Clientes")] 
     public GameObject emprendedor;
     public GameObject jefe;
     public GameObject abuela;
+    public float maxCliGlobalCD;
+    private float cliGlobalCD;
+    private Image cdBarCli;
 
     private UnitIA emprendedorStats;
     private UnitIA jefeStats;
@@ -31,6 +43,16 @@ public class UnitManager : MonoBehaviour
     private int filaP1;
     private int filaP2;
 
+    #endregion
+
+
+    private void Awake()
+    {
+        cdBarCli = GameObject.Find("CDBarP2").transform.Find("barP2").GetComponent<Image>();
+        cdBarSis = GameObject.Find("CDBarP1").transform.Find("barP1").GetComponent<Image>();
+        sisGlobalCD = 0f;
+        cliGlobalCD = 0f;
+    }
 
     void Start()
     {
@@ -51,6 +73,14 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    public void UnitGen(GameObject unit, int fila, Vector3[] lane, UnitIA stats)
+    {
+//        print("dinero actual: [" + dinero + "] | costo Unidad: [" + hackerStats.costUnit + ']');
+        unit.GetComponent<SpriteRenderer>().sortingOrder = fila + 1;
+        Instantiate(unit, lane[fila], Quaternion.Euler(Vector3.zero));
+        dinero -= stats.costUnit;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -58,77 +88,73 @@ public class UnitManager : MonoBehaviour
 
         if (CompareTag("Torre")) // Ing Sistemas
         {
+            cdBarSis.fillAmount = (sisGlobalCD / maxSisGlobalCD);
+            sisGlobalCD+=5;
+            print("Sistemas GCD: [" + cdBarSis.fillAmount + ']');
             // Compra hacker [Tecla A]
-            if (Input.GetKeyDown(KeyCode.A) && dinero >= hackerStats.costUnit)
+            if (Input.GetKeyDown(KeyCode.A) && dinero >= hackerStats.costUnit && sisGlobalCD >= maxSisGlobalCD)
             {
-                print("dinero actual: [" + dinero + "] | costo Unidad: [" + hackerStats.costUnit + ']');
-                hacker.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(hacker, pos[filaP1], Quaternion.Euler(Vector3.zero));
-                dinero -= hackerStats.costUnit;
+                UnitGen(hacker, filaP1, pos, hackerStats);
+                sisGlobalCD = 0f;
                 filaP1++;
             }
 
             // Compra designer [Tecla S]
-            if (Input.GetKeyDown(KeyCode.S) && dinero >= designerStats.lifePoints)
+            if (Input.GetKeyDown(KeyCode.S) && dinero >= designerStats.lifePoints && sisGlobalCD >= maxSisGlobalCD)
             {
-                print("dinero actual: [" + dinero + "] | costo Unidad: [" + designerStats.lifePoints + ']');
-                designer.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(designer, pos[filaP1], Quaternion.Euler(Vector3.zero));
-                dinero -= designerStats.costUnit;
+                UnitGen(designer, filaP1, pos, designerStats);
+                sisGlobalCD = 0f;
                 filaP1++;
             }
 
             //Compra CIO [Tecla D]
-            if (Input.GetKeyDown(KeyCode.D) && dinero >= cioStats.costUnit)
+            if (Input.GetKeyDown(KeyCode.D) && dinero >= cioStats.costUnit && sisGlobalCD >= maxSisGlobalCD)
             {
-                print("dinero actual: [" + dinero + "] | costo Unidad: [" + cioStats.costUnit + ']');
-                cioStats.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(cio, pos[filaP1], Quaternion.Euler(Vector3.zero));
-                dinero -= cioStats.costUnit;
+                UnitGen(cio, filaP1, pos, cioStats);
+                sisGlobalCD = 0f;
                 filaP1++;
             }
 
 //            print("Fila actual: [" + fila + ']');
-            if (filaP1 == 3)
-            {
-                filaP1 = 0;
-            }
+            if (filaP1 == 0b11)
+                filaP1 = 0b0;
         }
         else if (CompareTag("TorreEnemiga"))
         {
+            if (cliGlobalCD >= maxCliGlobalCD)
+                cliGlobalCD = maxCliGlobalCD;
+            cdBarCli.fillAmount = (cliGlobalCD / maxCliGlobalCD);
+            cliGlobalCD+=5;
+//            print("Cliente GCD: [" + cliGlobalCD + ']');
             // Clientes [arriba][izq][abajo][derecha]
 
             // Compra Emprendedor [izq]
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && dinero >= emprendedorStats.costUnit)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && dinero >= emprendedorStats.costUnit &&
+                cliGlobalCD >= maxCliGlobalCD)
             {
-                emprendedor.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(emprendedor, pos[filaP2], Quaternion.Euler(Vector3.zero));
-                dinero -= emprendedorStats.costUnit;
+                UnitGen(emprendedor, filaP2, pos, emprendedorStats);
+                cliGlobalCD = 0f;
                 filaP2++;
             }
 
-            // Compra gerente (Jefe) [abajo]
-            if (Input.GetKeyDown(KeyCode.DownArrow) && dinero >= jefeStats.costUnit)
+            // Compra Jefe [abajo]
+            if (Input.GetKeyDown(KeyCode.DownArrow) && dinero >= jefeStats.costUnit && cliGlobalCD >= maxCliGlobalCD)
             {
-                jefe.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(jefe, pos[filaP2], Quaternion.Euler(Vector3.zero));
-                dinero -= jefeStats.costUnit;
+                UnitGen(jefe, filaP2, pos, jefeStats);
+                cliGlobalCD = 0f;
                 filaP2++;
             }
 
             // Compra abuela [der]
-            if (Input.GetKeyDown(KeyCode.RightArrow) && dinero >= abuelaStats.costUnit)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && dinero >= abuelaStats.costUnit && cliGlobalCD >= maxCliGlobalCD)
             {
-                abuela.GetComponent<SpriteRenderer>().sortingOrder = filaP1 + 1;
-                Instantiate(abuela, pos[filaP2], Quaternion.Euler(Vector3.zero));
-                dinero -= abuelaStats.costUnit;
+                UnitGen(abuela, filaP2, pos, abuelaStats);
+                cliGlobalCD = 0f;
                 filaP2++;
             }
 
-            if (filaP2 == 3)
-            {
-                filaP2 = 0;
-            }
+            if (filaP2 == 0b11)
+                filaP2 = 0b0;
         }
     }
 }
