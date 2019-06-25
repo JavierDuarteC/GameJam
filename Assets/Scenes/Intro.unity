@@ -371,7 +371,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1c3222ec3004bb34890ff1e733801878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae073c46e2e6ab24c9cb7f47de49a522, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -400}
+  m_AnchoredPosition: {x: 535, y: -400}
   m_SizeDelta: {x: 450, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561015684
@@ -1308,7 +1308,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Un dia como cualquier otro en la guarida, donde se da la gran batalla contra
-    el gran monstruo analogico y sus crias, las hojas de calculo; se pierde la conexi\xF3n
+    el gran monstruo analogico y sus crias, las hojas de calculo; se pierde la conexion
     a internet.\r\n\nPANICO. lagrimas. Gritos de dolor. \"Lo tengo en la nube\". \"
     No salen los correos\". Estres, sufrimiento y calvicie.\r\n\nTres valientes escuadrones
     luchan contra los clientes para mantener el orden mientras los demas en un intento
@@ -1389,7 +1389,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 11
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}

@@ -466,8 +466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 680, y: 190}
-  m_SizeDelta: {x: 60, y: 100}
+  m_AnchoredPosition: {x: 675.6, y: 190}
+  m_SizeDelta: {x: 51.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133357390
 MonoBehaviour:
@@ -1389,8 +1389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -680, y: 180}
-  m_SizeDelta: {x: 100, y: 120}
+  m_AnchoredPosition: {x: -683.36, y: 180}
+  m_SizeDelta: {x: 88.48, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479574019
 MonoBehaviour:
@@ -1823,7 +1823,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 4935984790844978548, guid: 3d65e76a0ad9a7e409325e9453034c42,
+  m_Sprite: {fileID: -4055184738839986563, guid: 51bcf0149271a284f9f8e2bf8d21d9b1,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1875,8 +1875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -680, y: -50}
-  m_SizeDelta: {x: 60, y: 100}
+  m_AnchoredPosition: {x: -683.36, y: -50}
+  m_SizeDelta: {x: 53.28, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &925057893
 MonoBehaviour:
@@ -2879,7 +2879,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1c3222ec3004bb34890ff1e733801878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae073c46e2e6ab24c9cb7f47de49a522, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3742,7 +3742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d02609d26fcf468bc12c083bbfc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: GameScene
+  sceneName: Intro
 --- !u!1 &1481951327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,8 +3777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 680, y: -290}
-  m_SizeDelta: {x: 60, y: 100}
+  m_AnchoredPosition: {x: 677.3, y: -290}
+  m_SizeDelta: {x: 54.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481951329
 MonoBehaviour:
@@ -4245,8 +4245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 680, y: -50}
-  m_SizeDelta: {x: 60, y: 100}
+  m_AnchoredPosition: {x: 673.5, y: -50}
+  m_SizeDelta: {x: 46.9, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869671195
 MonoBehaviour:

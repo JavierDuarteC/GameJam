@@ -43,6 +43,7 @@ public class UnitIA : MonoBehaviour
     private Image healthBarP1;
     private Image healthBarP2;
     private const float maxTowerLife = 1000;
+    private Animator _anim;
 
 
     // Start is called before the first frame update
@@ -57,12 +58,15 @@ public class UnitIA : MonoBehaviour
     private void Start()
     {
         attackTimer = randomSpeed;
+        _anim = GetComponent<Animator>();
         _unitMan = GameObject.Find(CompareTag("UnitIA") ? "Tower" : "EnemyTower").GetComponent<UnitManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        _anim.SetBool("isMoving", isMoving);
+        _anim.SetBool("isAttacking", isAttacking);
         if (CompareTag("Torre") || CompareTag("TorreEnemiga")) return; // Define si la torre ataca o no ataca
         if (isMoving)
         {
