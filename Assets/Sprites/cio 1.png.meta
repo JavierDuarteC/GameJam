@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 51bcf0149271a284f9f8e2bf8d21d9b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6033450363916095166
+    second: cio 1_0
+  - first:
+      213: -4055184738839986563
+    second: cio 1_1
+  - first:
+      213: -1818601069399015992
+    second: cio 1_2
+  - first:
+      213: -317122610365578874
+    second: cio 1_3
+  - first:
+      213: 4316918696862470665
+    second: cio 1_4
+  - first:
+      213: -4219074830408960494
+    second: cio 1_5
+  - first:
+      213: 7942580929573944924
+    second: cio 1_6
+  - first:
+      213: 5741928159208669379
+    second: cio 1_7
+  - first:
+      213: 4079375673668559487
+    second: cio 1_8
+  - first:
+      213: 1886176174332034900
+    second: cio 1_9
+  - first:
+      213: 442092908582999324
+    second: cio 1_10
+  - first:
+      213: -1213967640149431142
+    second: cio 1_11
+  - first:
+      213: -7931655031798921051
+    second: cio 1_12
+  - first:
+      213: -3949284587140929219
+    second: cio 1_13
+  - first:
+      213: 5014871481848149982
+    second: cio 1_14
+  - first:
+      213: 6521708255219107660
+    second: cio 1_15
+  - first:
+      213: -467670917648617560
+    second: cio 1_16
+  - first:
+      213: -2468974113394387531
+    second: cio 1_17
+  - first:
+      213: 559982180548896612
+    second: cio 1_18
+  - first:
+      213: 3659737554322248022
+    second: cio 1_19
+  - first:
+      213: -2421800457937412605
+    second: cio 1_20
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cio 1_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 193
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5869117, y: -0.014072824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d4c8c5dfaa1d74693efe6c2bd3f89e
+      internalID: 6033450363916095166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 194
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5931192, y: -0.032565176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9bde4454af277458b8f66c56b8c756
+      internalID: -4055184738839986563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 195
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5807032, y: -0.05418883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f20e0692e3f6eb4dbcbcacaad6ee20b
+      internalID: -1818601069399015992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 196
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5807032, y: -0.07509597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dccc208d848550499ca997eb0e10d50
+      internalID: -317122610365578874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 195
+        width: 28
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5807032, y: -0.05044047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea6e35378e027c44ae0a0b1561a461f
+      internalID: 4316918696862470665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 193
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5900149, y: -0.01777162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf91d2d9d2de454dbcd006cea6ff5fb
+      internalID: -4219074830408960494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_6
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 192
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5993271, y: -0.04735809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a19e627fbd693478c6b42bce1f60eb
+      internalID: 7942580929573944924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 131
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5712112, y: -0.015781485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2bf4b5ffa0e47479931a7a1311b8db
+      internalID: 5741928159208669379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 132
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.55996776, y: -0.044250164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ede68896ab20684881828f0745d81d0
+      internalID: 4079375673668559487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_9
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 133
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.544976, y: -0.06267077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c87bb703fddbc4dad87273ae6c8fee
+      internalID: 1886176174332034900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 134
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5412278, y: -0.09281402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c64c851c6c67948bc0cb353a4050f4
+      internalID: 442092908582999324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_11
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 133
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd0f65949e067245be49f3e9b55748f
+      internalID: -1213967640149431142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_12
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 132
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816e7999828eae44396aee493181d944
+      internalID: -7931655031798921051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 131
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7686e594addc4c9459276b8a2ae4267f
+      internalID: -3949284587140929219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 61
+        width: 41
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5025185, y: 0.011667967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082c4ad58c967d84d86736e9bd6ffc8c
+      internalID: 5014871481848149982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 61
+        width: 41
+        height: 49
+      alignment: 9
+      pivot: {x: 0.47642964, y: 0.008989373}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658b43cbda6768f40992baef8c706e85
+      internalID: 6521708255219107660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_16
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 61
+        width: 41
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4728412, y: 0.010549087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1ec907a93e91143a857e48004a0ca6
+      internalID: -467670917648617560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_17
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 61
+        width: 41
+        height: 51
+      alignment: 9
+      pivot: {x: 0.45124483, y: 0.007997999}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff04afd87a8f594da5db375b1fb925c
+      internalID: -2468974113394387531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_18
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 61
+        width: 41
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.012047636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271e0d68bcf1f374592cf758fe91e238
+      internalID: 559982180548896612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_19
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 61
+        width: 41
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4758844, y: 0.012614288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13b270bbef930045b626ea88ed328d1
+      internalID: 3659737554322248022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cio 1_20
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 61
+        width: 42
+        height: 49
+      alignment: 9
+      pivot: {x: 0.48809522, y: 0.012870867}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257aa70ec8fd9b64db18ceddd8c47d67
+      internalID: -2421800457937412605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2a9f4bc2b17c4ca4babe098614388e7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

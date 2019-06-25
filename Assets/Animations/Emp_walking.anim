@@ -20,30 +20,27 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1294289557152168437, guid: 8635ccdebe03bf74fa599f238593bac6,
-        type: 3}
-    - time: 0.083333336
       value: {fileID: -2626900111282763140, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: -7391907958614934915, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.25
+    - time: 0.18333334
       value: {fileID: 7191127569938030441, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.33333334
+    - time: 0.26666668
       value: {fileID: 1351944425493624854, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.41666666
+    - time: 0.36666667
       value: {fileID: -5132678990440598716, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.5
+    - time: 0.45
       value: {fileID: -3661192886545193133, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.5833333
+    - time: 0.55
       value: {fileID: -7040207639440551695, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
-    - time: 0.6666667
+    - time: 0.6333333
       value: {fileID: -2032797900341412294, guid: 8635ccdebe03bf74fa599f238593bac6,
         type: 3}
     attribute: m_Sprite
@@ -65,7 +62,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1294289557152168437, guid: 8635ccdebe03bf74fa599f238593bac6, type: 3}
     - {fileID: -2626900111282763140, guid: 8635ccdebe03bf74fa599f238593bac6, type: 3}
     - {fileID: -7391907958614934915, guid: 8635ccdebe03bf74fa599f238593bac6, type: 3}
     - {fileID: 7191127569938030441, guid: 8635ccdebe03bf74fa599f238593bac6, type: 3}
@@ -79,7 +75,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.65
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
