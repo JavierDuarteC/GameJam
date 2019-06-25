@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 902775756}
   - component: {fileID: 902775755}
   - component: {fileID: 902775754}
+  - component: {fileID: 902775757}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -583,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -612,7 +613,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 902775755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 902775757}
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &902775755
@@ -652,6 +664,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902775752}
   m_CullTransparentMesh: 0
+--- !u!114 &902775757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902775752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539d02609d26fcf468bc12c083bbfc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: GameScene
 --- !u!1 &1733422113
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +689,7 @@ GameObject:
   - component: {fileID: 1733422117}
   - component: {fileID: 1733422116}
   - component: {fileID: 1733422115}
+  - component: {fileID: 1733422118}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -755,6 +781,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1733422118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733422113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588c2a61589c04544beca9ecf4a1fe5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guarida: {fileID: 0}
+  pozo: {fileID: 0}
 --- !u!1 &1782410787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1207,7 +1247,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2045717648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 902775757}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2045717648
@@ -1262,7 +1313,7 @@ PrefabInstance:
     - target: {fileID: 2640515127162397548, guid: 43b7fc78526a43a418e71ad89a05b5ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2640515127162397547, guid: 43b7fc78526a43a418e71ad89a05b5ea,
         type: 3}
@@ -1382,7 +1433,7 @@ PrefabInstance:
     - target: {fileID: 2640515126678051986, guid: 43b7fc78526a43a418e71ad89a05b5ea,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43b7fc78526a43a418e71ad89a05b5ea, type: 3}
@@ -1401,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 8316586189463175958, guid: 186ee2bbf1990284ebdd110330bde1c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8316586189463175959, guid: 186ee2bbf1990284ebdd110330bde1c4,
         type: 3}
