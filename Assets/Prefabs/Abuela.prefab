@@ -52,7 +52,7 @@ MonoBehaviour:
   isEnemy: 1
   lifePoints: 300
   speed: 1
-  attackSpeed: 1.5
+  attackSpeed: 1.8
   attackPower: 100
   costUnit: 300
   objAttack: {fileID: 0}

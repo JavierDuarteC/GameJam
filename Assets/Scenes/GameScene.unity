@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinero: 0
-  income: 10
+  income: 20
   hacker: {fileID: 0}
   designer: {fileID: 0}
   cio: {fileID: 0}
@@ -3871,7 +3871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinero: 0
-  income: 10
+  income: 20
   hacker: {fileID: 8510694960167796700, guid: 086a70abb32350e48abc723214403440, type: 3}
   designer: {fileID: 2785093565340352697, guid: bfc0b71d57679794baeb85009a6a05dc,
     type: 3}

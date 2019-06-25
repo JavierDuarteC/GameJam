@@ -215,7 +215,7 @@ public class UnitIA : MonoBehaviour
             }
             else
             {
-                _unitMan.dinero += other.costUnit;
+                _unitMan.dinero += other.costUnit-50f;
                 print("Banco: [" + _unitMan.dinero + "] " + "Ganancia: [" + other.costUnit + ']');
                 Destroy(other.gameObject);
             }

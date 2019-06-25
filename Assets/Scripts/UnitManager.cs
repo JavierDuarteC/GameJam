@@ -90,7 +90,7 @@ public class UnitManager : MonoBehaviour
         {
             cdBarSis.fillAmount = (sisGlobalCD / maxSisGlobalCD);
             sisGlobalCD+=5;
-            print("Sistemas GCD: [" + cdBarSis.fillAmount + ']');
+            
             // Compra hacker [Tecla A]
             if (Input.GetKeyDown(KeyCode.A) && dinero >= hackerStats.costUnit && sisGlobalCD >= maxSisGlobalCD)
             {
