@@ -73,11 +73,11 @@ public class UnitManager : MonoBehaviour
         }
     }
 
-    public void UnitGen(GameObject unit, int fila, Vector3[] lane, UnitIA stats)
+    public void UnitGen(GameObject unit, Vector3 lane, UnitIA stats, int fila)
     {
 //        print("dinero actual: [" + dinero + "] | costo Unidad: [" + hackerStats.costUnit + ']');
         unit.GetComponent<SpriteRenderer>().sortingOrder = fila + 1;
-        Instantiate(unit, lane[fila], Quaternion.Euler(Vector3.zero));
+        Instantiate(unit, lane, Quaternion.Euler(Vector3.zero));
         dinero -= stats.costUnit;
     }
 
@@ -94,7 +94,7 @@ public class UnitManager : MonoBehaviour
             // Compra hacker [Tecla A]
             if (Input.GetKeyDown(KeyCode.A) && dinero >= hackerStats.costUnit && sisGlobalCD >= maxSisGlobalCD)
             {
-                UnitGen(hacker, filaP1, pos, hackerStats);
+                UnitGen(hacker, pos[filaP1], hackerStats,filaP1);
                 sisGlobalCD = 0f;
                 filaP1++;
             }
@@ -102,7 +102,7 @@ public class UnitManager : MonoBehaviour
             // Compra designer [Tecla S]
             if (Input.GetKeyDown(KeyCode.S) && dinero >= designerStats.lifePoints && sisGlobalCD >= maxSisGlobalCD)
             {
-                UnitGen(designer, filaP1, pos, designerStats);
+                UnitGen(designer, pos[filaP1]-new Vector3(0f,1f), designerStats,filaP1);
                 sisGlobalCD = 0f;
                 filaP1++;
             }
@@ -110,7 +110,7 @@ public class UnitManager : MonoBehaviour
             //Compra CIO [Tecla D]
             if (Input.GetKeyDown(KeyCode.D) && dinero >= cioStats.costUnit && sisGlobalCD >= maxSisGlobalCD)
             {
-                UnitGen(cio, filaP1, pos, cioStats);
+                UnitGen(cio, pos[filaP1]-new Vector3(0f,0.2f), cioStats,filaP1);
                 sisGlobalCD = 0f;
                 filaP1++;
             }
@@ -132,7 +132,7 @@ public class UnitManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow) && dinero >= emprendedorStats.costUnit &&
                 cliGlobalCD >= maxCliGlobalCD)
             {
-                UnitGen(emprendedor, filaP2, pos, emprendedorStats);
+                UnitGen(emprendedor, pos[filaP2]-new Vector3(0f,1f), emprendedorStats,filaP1);
                 cliGlobalCD = 0f;
                 filaP2++;
             }
@@ -140,7 +140,7 @@ public class UnitManager : MonoBehaviour
             // Compra Jefe [abajo]
             if (Input.GetKeyDown(KeyCode.DownArrow) && dinero >= jefeStats.costUnit && cliGlobalCD >= maxCliGlobalCD)
             {
-                UnitGen(jefe, filaP2, pos, jefeStats);
+                UnitGen(jefe, pos[filaP2]-new Vector3(0f,1.1f), jefeStats,filaP1);
                 cliGlobalCD = 0f;
                 filaP2++;
             }
@@ -148,7 +148,7 @@ public class UnitManager : MonoBehaviour
             // Compra abuela [der]
             if (Input.GetKeyDown(KeyCode.RightArrow) && dinero >= abuelaStats.costUnit && cliGlobalCD >= maxCliGlobalCD)
             {
-                UnitGen(abuela, filaP2, pos, abuelaStats);
+                UnitGen(abuela, pos[filaP2], abuelaStats,filaP1);
                 cliGlobalCD = 0f;
                 filaP2++;
             }

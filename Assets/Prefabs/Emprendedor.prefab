@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9202288102253614379}
   - component: {fileID: 9202288102253614378}
   - component: {fileID: 9202288102253614382}
+  - component: {fileID: 9202288101245722106}
   m_Layer: 9
   m_Name: Emprendedor
   m_TagString: EnemyIA
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9202288102253614377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.9427514, y: -3.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,18 +49,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.092170894, y: 0.08192992}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44275102, y: 0.4657197}
-    oldSize: {x: 1.61, y: 2.39}
+    pivot: {x: 0.5192448, y: 0.007253647}
+    oldSize: {x: 0.22, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 0.5}
+  m_Size: {x: 0.2750373, y: 0.15}
   m_EdgeRadius: 0
 --- !u!212 &9202288102253614380
 SpriteRenderer:
@@ -97,11 +98,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 2088923781634697940, guid: 2a9724d9fa422ca48aa7abd247606df8,
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1294289557152168437, guid: 8635ccdebe03bf74fa599f238593bac6,
     type: 3}
-  m_Color: {r: 0.8867924, g: 0.32208967, b: 0.32208967, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -123,18 +124,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: -0.16, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44275102, y: 0.4657197}
-    oldSize: {x: 1.61, y: 2.39}
+    pivot: {x: 0.5192448, y: 0.007253647}
+    oldSize: {x: 0.22, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3262031, y: 0.15}
   m_EdgeRadius: 0
 --- !u!50 &9202288102253614378
 Rigidbody2D:
@@ -177,3 +178,22 @@ MonoBehaviour:
   attackPower: 34
   costUnit: 100
   objAttack: {fileID: 0}
+--- !u!95 &9202288101245722106
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9202288102253614377}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a10f5f332984cab4795c02eff13068ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
