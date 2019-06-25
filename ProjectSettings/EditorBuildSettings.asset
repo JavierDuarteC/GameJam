@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Characters.unity
     guid: 7f43843e5aefcb449aab6551161be236
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: f0661e5527c477249b1ebad2b2b193cf
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: ee9e93e8c57c9f4439f439b9a8ca7d45
   m_configObjects: {}

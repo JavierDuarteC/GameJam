@@ -44,6 +44,7 @@ public class UnitIA : MonoBehaviour
     private Image healthBarP2;
     private const float maxTowerLife = 1000;
 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -196,10 +197,17 @@ public class UnitIA : MonoBehaviour
 
         if (other.lifePoints <= 0)
         {
-            if (other.CompareTag("Torre") || other.CompareTag("TorreEnemiga"))
+            if (other.CompareTag("Torre"))
             {
+                WinnerHolder.winner = "Clientes";
                 Destroy(other.gameObject);
-                SceneManager.LoadScene(SceneManager.GetSceneAt(3).name); // Cargar pantalla de fin
+                SceneManager.LoadScene("Winner"); // Cargar pantalla de fin
+            }
+            else if (other.CompareTag("TorreEnemiga"))
+            {
+                WinnerHolder.winner = "Sistemas";
+                Destroy(other.gameObject);
+                SceneManager.LoadScene("Winner"); // Cargar pantalla de fin
             }
             else
             {
