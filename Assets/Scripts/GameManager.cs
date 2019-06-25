@@ -2,25 +2,12 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
-    public int width;
-    public int height;
+    private static GameManager instance;
 
-    public void SetWidth(int newWidth)
-    {
-        width = newWidth;
-    }
+    [HideInInspector] public string winner;
 
-    public void SetHeight(int newHeight)
-    {
-        height = newHeight;
-    }
-
-    public void SetRes()
-    {
-        Screen.SetResolution(width, height, false);
-    }
-
+    public GameObject guarida;
+    public GameObject sistemas;
 
     private void Awake()
     {
@@ -28,12 +15,24 @@ public class GameManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
 
     // Start is called before the first frame update
     private void Start()
     {
+        print(winner);
+        if (winner == "Sistemas")
+        {
+            Instantiate(guarida);
+            
+        }
+
+        if (winner == "Clientes")
+        {
+            Instantiate(sistemas);
+        }
     }
 
     // Update is called once per frame

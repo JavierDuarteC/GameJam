@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d02609d26fcf468bc12c083bbfc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: GameScene
+  sceneName: Intro
 --- !u!95 &147485283
 Animator:
   serializedVersion: 3
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 874554135}
   - component: {fileID: 874554139}
   m_Layer: 5
-  m_Name: InfoBtn
+  m_Name: InstruccionesBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

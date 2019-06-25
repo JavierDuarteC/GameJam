@@ -43,6 +43,7 @@ public class UnitIA : MonoBehaviour
     private Image healthBarP1;
     private Image healthBarP2;
     private const float maxTowerLife = 1000;
+    private GameManager _gameMan;
 
     // Start is called before the first frame update
     void Awake()
@@ -57,6 +58,7 @@ public class UnitIA : MonoBehaviour
     {
         attackTimer = randomSpeed;
         _unitMan = GameObject.Find(CompareTag("UnitIA") ? "Tower" : "EnemyTower").GetComponent<UnitManager>();
+        _gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -196,10 +198,17 @@ public class UnitIA : MonoBehaviour
 
         if (other.lifePoints <= 0)
         {
-            if (other.CompareTag("Torre") || other.CompareTag("TorreEnemiga"))
+            if (other.CompareTag("Torre"))
             {
+                _gameMan.winner = "Clientes";
                 Destroy(other.gameObject);
-                SceneManager.LoadScene(SceneManager.GetSceneAt(3).name); // Cargar pantalla de fin
+                SceneManager.LoadScene("Winner"); // Cargar pantalla de fin
+            }
+            else if (other.CompareTag("TorreEnemiga"))
+            {
+                _gameMan.winner = "Sistemas";
+                Destroy(other.gameObject);
+                SceneManager.LoadScene("Winner"); // Cargar pantalla de fin
             }
             else
             {
