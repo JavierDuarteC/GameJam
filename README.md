@@ -2,3 +2,5 @@
 
 # GameJam
 Proyecto de Game jam para pasar la materia
+
+By: I202LAB
